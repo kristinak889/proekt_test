@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Записки рукодельницы</title>
+  <title>Записки рукодельницы · Аксессуары</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -29,10 +29,10 @@
       <div class="hero-visual" aria-hidden="true"></div>
       <div class="hero-content">
         <p class="brand">Записки рукодельницы</p>
-        <h1>Мастерская, где нитки превращаются в истории</h1>
-        <p class="lead">Заметки о материалах, расчётах, идеях и людях, для которых шьются вещи. Всё сохраняется в этом браузере.</p>
+        <h1>Ателье женских аксессуаров ручной работы</h1>
+        <p class="lead">Бусины, ленты и фурнитура — в серьги, браслеты, заколки и сумочки. Заметки сохраняются в этом браузере.</p>
         <div class="cta-group">
-          <a class="btn btn-primary" href="#materials">Открыть записки</a>
+          <a class="btn btn-primary" href="#materials">К материалам</a>
           <a class="btn btn-ghost" href="#ideas">Смотреть идеи</a>
         </div>
       </div>
@@ -41,7 +41,7 @@
     <section class="section" id="materials">
       <div class="section-intro">
         <h2>Список материалов</h2>
-        <p>Что лежит на полке и что ещё нужно докупить для текущих работ.</p>
+        <p>Бусины, основы, ленты и фурнитура для текущих украшений и аксессуаров.</p>
       </div>
       <ul class="material-list" id="materials-list"></ul>
       <form class="add-form" id="materials-form" data-list="materials">
@@ -54,28 +54,28 @@
     <section class="section section-alt" id="cost">
       <div class="section-intro">
         <h2>Расчёт стоимости</h2>
-        <p>Быстрый подсчёт материалов и работы для заказа. Значения тоже сохраняются.</p>
+        <p>Подсчёт материалов и работы для комплекта или единичного аксессуара.</p>
       </div>
       <form class="cost-form" id="cost-form">
         <label>
           Материалы, ₽
-          <input type="number" id="materials-cost" name="materialsCost" min="0" step="10" value="1200" />
+          <input type="number" id="materials-cost" name="materialsCost" min="0" step="10" value="850" />
         </label>
         <label>
           Часы работы
-          <input type="number" id="hours" name="hours" min="0" step="0.5" value="6" />
+          <input type="number" id="hours" name="hours" min="0" step="0.5" value="3" />
         </label>
         <label>
           Ставка в час, ₽
-          <input type="number" id="rate" name="rate" min="0" step="50" value="800" />
+          <input type="number" id="rate" name="rate" min="0" step="50" value="900" />
         </label>
         <label>
           Наценка, %
-          <input type="number" id="margin" name="margin" min="0" step="5" value="20" />
+          <input type="number" id="margin" name="margin" min="0" step="5" value="25" />
         </label>
         <div class="cost-result" aria-live="polite">
           <span class="cost-label">Итого для клиента</span>
-          <strong id="total-price">7 200 ₽</strong>
+          <strong id="total-price">4 438 ₽</strong>
         </div>
       </form>
     </section>
@@ -83,7 +83,7 @@
     <section class="section" id="ideas">
       <div class="section-intro">
         <h2>Идеи и зарисовки</h2>
-        <p>Наброски будущих изделий и небольшие заметки к ним.</p>
+        <p>Эскизы будущих серёг, браслетов, заколок и других аксессуаров.</p>
       </div>
       <div class="ideas-rail" id="ideas-list"></div>
       <form class="add-form add-form-wide" id="ideas-form" data-list="ideas">
@@ -96,7 +96,7 @@
     <section class="section section-alt" id="shops">
       <div class="section-intro">
         <h2>Магазины</h2>
-        <p>Проверенные места, куда хожу за тканями и фурнитурой.</p>
+        <p>Где беру бусины, фурнитуру, ленты и основы для украшений.</p>
       </div>
       <ul class="shop-list" id="shops-list"></ul>
       <form class="add-form add-form-shops" id="shops-form" data-list="shops">
@@ -110,7 +110,7 @@
     <section class="section" id="clients">
       <div class="section-intro">
         <h2>Клиенты</h2>
-        <p>Люди и заказы, которые сейчас в работе или уже сданы.</p>
+        <p>Заказы на аксессуары: в работе, в ожидании фурнитуры или уже сданы.</p>
       </div>
       <ul class="client-list" id="clients-list"></ul>
       <form class="add-form add-form-clients" id="clients-form" data-list="clients">
@@ -118,7 +118,7 @@
         <input type="text" name="order" placeholder="Заказ" required />
         <select name="status" aria-label="Статус">
           <option value="work">в работе</option>
-          <option value="wait">ожидает ткань</option>
+          <option value="wait">ожидает фурнитуру</option>
           <option value="done">сдан</option>
         </select>
         <button type="submit" class="btn btn-add">Добавить</button>
@@ -130,7 +130,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>Записки рукодельницы · личный дневник мастерской</p>
+    <p>Записки рукодельницы · ателье женских аксессуаров</p>
   </footer>
 
   <script src="script.js"></script>

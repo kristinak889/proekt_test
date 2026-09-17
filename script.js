@@ -1,8 +1,8 @@
-const STORAGE_KEY = "zapiski-rukodelnitsy-v1";
+const STORAGE_KEY = "zapiski-rukodelnitsy-v2-accessories";
 
 const STATUS_LABELS = {
   work: "в работе",
-  wait: "ожидает ткань",
+  wait: "ожидает фурнитуру",
   done: "сдан",
 };
 
@@ -13,52 +13,52 @@ function uid() {
 function createDefaults() {
   return {
     materials: [
-      { id: uid(), name: "Лён натуральный, 150 см", meta: "2,4 м · молочный" },
-      { id: uid(), name: "Муслин хлопковый", meta: "1,8 м · пыльно-розовый" },
-      { id: uid(), name: "Нитки Gutermann", meta: "3 катушки · № 50" },
-      { id: uid(), name: "Кружево хлопковое", meta: "4 м · кремовое" },
-      { id: uid(), name: "Пуговицы деревянные", meta: "12 шт · Ø 18 мм" },
-      { id: uid(), name: "Флизелин лёгкий", meta: "1 м · белый" },
+      { id: uid(), name: "Бусины стеклянные", meta: "80 шт · розовый кварц" },
+      { id: uid(), name: "Жемчуг искусственный", meta: "40 шт · молочный 8 мм" },
+      { id: uid(), name: "Фурнитура латунная", meta: "швензы, карабины · золото" },
+      { id: uid(), name: "Лента атласная", meta: "5 м · пудровая" },
+      { id: uid(), name: "Проволока ювелирная", meta: "0,4 мм · 10 м" },
+      { id: uid(), name: "Основы для заколок", meta: "12 шт · серебро" },
     ],
     ideas: [
       {
         id: uid(),
-        title: "Летнее платье-кимоно",
-        note: "Свободный крой, пояс из той же ткани, рукава ¾. Лён + контрастная отстрочка.",
+        title: "Серьги «Капля росы»",
+        note: "Длинные серьги с жемчугом и прозрачными бусинами, лёгкое золотое крепление.",
       },
       {
         id: uid(),
-        title: "Сумка-шоппер с карманом",
-        note: "Двойное дно, внутренняя подкладка, ручки из ременной ленты.",
+        title: "Браслет из атласа",
+        note: "Многослойная лента, магнитный замок, одна крупная бусина-акцент.",
       },
       {
         id: uid(),
-        title: "Детский комбинезон",
-        note: "Мягкий муслин, кнопки по плечу, вышивка имени на кармашке.",
+        title: "Заколка с бантом",
+        note: "Шёлковый бант на основе-зажиме, тонкая вышивка бисером по краю.",
       },
       {
         id: uid(),
-        title: "Скатерть с мережкой",
-        note: "Квадрат 150×150, ручная мережка по краю, тонкий кант.",
+        title: "Мини-сумочка на цепочке",
+        note: "Бархат, цепочка через плечо, фермуар, подкладка в тон бусинам.",
       },
     ],
     shops: [
-      { id: uid(), name: "Ткани «Льняной двор»", note: "натуральные ткани · доставка", url: "" },
-      { id: uid(), name: "Фурнитура «Иголочка»", note: "пуговицы, молнии, нитки", url: "" },
-      { id: uid(), name: "Магазин «Муслин»", note: "детские и лёгкие ткани", url: "" },
-      { id: uid(), name: "Ателье-склад «Крой»", note: "остатки метражом · выгодно", url: "" },
+      { id: uid(), name: "«Бусина»", note: "стекло, жемчуг, бисер", url: "" },
+      { id: uid(), name: "Фурнитура «Золотая нить»", note: "швензы, замки, цепочки", url: "" },
+      { id: uid(), name: "Ленты «Ателье бант»", note: "атлас, органза, бархат", url: "" },
+      { id: uid(), name: "HandMade Market", note: "готовые основы · опт", url: "" },
     ],
     clients: [
-      { id: uid(), name: "Анна К.", order: "Платье на выпускной", status: "work" },
-      { id: uid(), name: "Мария С.", order: "Комплект постельного", status: "done" },
-      { id: uid(), name: "Елена В.", order: "Ремонт пальто", status: "wait" },
-      { id: uid(), name: "Ольга П.", order: "Сумка и косметичка", status: "work" },
+      { id: uid(), name: "Анна К.", order: "Серьги и браслет к платью", status: "work" },
+      { id: uid(), name: "Мария С.", order: "Заколки для причёски", status: "done" },
+      { id: uid(), name: "Елена В.", order: "Колье с жемчугом", status: "wait" },
+      { id: uid(), name: "Ольга П.", order: "Мини-сумочка и брошь", status: "work" },
     ],
     cost: {
-      materialsCost: 1200,
-      hours: 6,
-      rate: 800,
-      margin: 20,
+      materialsCost: 850,
+      hours: 3,
+      rate: 900,
+      margin: 25,
     },
   };
 }
@@ -267,7 +267,7 @@ function renderClients() {
               <input type="text" name="order" value="${escapeHtml(item.order)}" required />
               <select name="status">
                 <option value="work"${item.status === "work" ? " selected" : ""}>в работе</option>
-                <option value="wait"${item.status === "wait" ? " selected" : ""}>ожидает ткань</option>
+                <option value="wait"${item.status === "wait" ? " selected" : ""}>ожидает фурнитуру</option>
                 <option value="done"${item.status === "done" ? " selected" : ""}>сдан</option>
               </select>
               ${editActions()}
