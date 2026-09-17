@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Записки рукодельницы</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="logo" href="#top">Записки рукодельницы</a>
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="#materials">Материалы</a>
+      <a href="#cost">Стоимость</a>
+      <a href="#ideas">Идеи</a>
+      <a href="#shops">Магазины</a>
+      <a href="#clients">Клиенты</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-visual" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="brand">Записки рукодельницы</p>
+        <h1>Мастерская, где нитки превращаются в истории</h1>
+        <p class="lead">Заметки о материалах, расчётах, идеях и людях, для которых шьются вещи.</p>
+        <div class="cta-group">
+          <a class="btn btn-primary" href="#materials">Открыть записки</a>
+          <a class="btn btn-ghost" href="#ideas">Смотреть идеи</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="materials">
+      <div class="section-intro">
+        <h2>Список материалов</h2>
+        <p>Что лежит на полке и что ещё нужно докупить для текущих работ.</p>
+      </div>
+      <ul class="material-list">
+        <li>
+          <span class="material-name">Лён натуральный, 150 см</span>
+          <span class="material-meta">2,4 м · молочный</span>
+        </li>
+        <li>
+          <span class="material-name">Муслин хлопковый</span>
+          <span class="material-meta">1,8 м · пыльно-розовый</span>
+        </li>
+        <li>
+          <span class="material-name">Нитки Gutermann</span>
+          <span class="material-meta">3 катушки · № 50</span>
+        </li>
+        <li>
+          <span class="material-name">Кружево хлопковое</span>
+          <span class="material-meta">4 м · кремовое</span>
+        </li>
+        <li>
+          <span class="material-name">Пуговицы деревянные</span>
+          <span class="material-meta">12 шт · Ø 18 мм</span>
+        </li>
+        <li>
+          <span class="material-name">Флизелин лёгкий</span>
+          <span class="material-meta">1 м · белый</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section section-alt" id="cost">
+      <div class="section-intro">
+        <h2>Расчёт стоимости</h2>
+        <p>Быстрый подсчёт материалов и работы для заказа.</p>
+      </div>
+      <form class="cost-form" id="cost-form">
+        <label>
+          Материалы, ₽
+          <input type="number" id="materials-cost" min="0" step="10" value="1200" />
+        </label>
+        <label>
+          Часы работы
+          <input type="number" id="hours" min="0" step="0.5" value="6" />
+        </label>
+        <label>
+          Ставка в час, ₽
+          <input type="number" id="rate" min="0" step="50" value="800" />
+        </label>
+        <label>
+          Наценка, %
+          <input type="number" id="margin" min="0" step="5" value="20" />
+        </label>
+        <div class="cost-result" aria-live="polite">
+          <span class="cost-label">Итого для клиента</span>
+          <strong id="total-price">7 200 ₽</strong>
+        </div>
+      </form>
+    </section>
+
+    <section class="section" id="ideas">
+      <div class="section-intro">
+        <h2>Идеи и зарисовки</h2>
+        <p>Наброски будущих изделий и небольшие заметки к ним.</p>
+      </div>
+      <div class="ideas-rail">
+        <article class="idea">
+          <h3>Летнее платье-кимоно</h3>
+          <p>Свободный крой, пояс из той же ткани, рукава ¾. Лён + контрастная отстрочка.</p>
+        </article>
+        <article class="idea">
+          <h3>Сумка-шоппер с карманом</h3>
+          <p>Двойное дно, внутренняя подкладка, ручки из ременной ленты.</p>
+        </article>
+        <article class="idea">
+          <h3>Детский комбинезон</h3>
+          <p>Мягкий муслин, кнопки по плечу, вышивка имени на кармашке.</p>
+        </article>
+        <article class="idea">
+          <h3>Скатерть с мережкой</h3>
+          <p>Квадрат 150×150, ручная мережка по краю, тонкий кант.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="shops">
+      <div class="section-intro">
+        <h2>Магазины</h2>
+        <p>Проверенные места, куда хожу за тканями и фурнитурой.</p>
+      </div>
+      <ul class="shop-list">
+        <li>
+          <a href="#" class="shop-link">
+            <span class="shop-name">Ткани «Льняной двор»</span>
+            <span class="shop-note">натуральные ткани · доставка</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="shop-link">
+            <span class="shop-name">Фурнитура «Иголочка»</span>
+            <span class="shop-note">пуговицы, молнии, нитки</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="shop-link">
+            <span class="shop-name">Магазин «Муслин»</span>
+            <span class="shop-note">детские и лёгкие ткани</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="shop-link">
+            <span class="shop-name">Ателье-склад «Крой»</span>
+            <span class="shop-note">остатки метражом · выгодно</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" id="clients">
+      <div class="section-intro">
+        <h2>Клиенты</h2>
+        <p>Люди и заказы, которые сейчас в работе или уже сданы.</p>
+      </div>
+      <ul class="client-list">
+        <li>
+          <span class="client-name">Анна К.</span>
+          <span class="client-order">Платье на выпускной</span>
+          <span class="client-status status-work">в работе</span>
+        </li>
+        <li>
+          <span class="client-name">Мария С.</span>
+          <span class="client-order">Комплект постельного</span>
+          <span class="client-status status-done">сдан</span>
+        </li>
+        <li>
+          <span class="client-name">Елена В.</span>
+          <span class="client-order">Ремонт пальто</span>
+          <span class="client-status status-wait">ожидает ткань</span>
+        </li>
+        <li>
+          <span class="client-name">Ольга П.</span>
+          <span class="client-order">Сумка и косметичка</span>
+          <span class="client-status status-work">в работе</span>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Записки рукодельницы · личный дневник мастерской</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
