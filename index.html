@@ -21,6 +21,7 @@
       <a href="#shops">Магазины</a>
       <a href="#clients">Клиенты</a>
     </nav>
+    <p class="save-status" id="save-status" aria-live="polite">Сохранено в браузере</p>
   </header>
 
   <main id="top">
@@ -29,7 +30,7 @@
       <div class="hero-content">
         <p class="brand">Записки рукодельницы</p>
         <h1>Мастерская, где нитки превращаются в истории</h1>
-        <p class="lead">Заметки о материалах, расчётах, идеях и людях, для которых шьются вещи.</p>
+        <p class="lead">Заметки о материалах, расчётах, идеях и людях, для которых шьются вещи. Всё сохраняется в этом браузере.</p>
         <div class="cta-group">
           <a class="btn btn-primary" href="#materials">Открыть записки</a>
           <a class="btn btn-ghost" href="#ideas">Смотреть идеи</a>
@@ -42,55 +43,35 @@
         <h2>Список материалов</h2>
         <p>Что лежит на полке и что ещё нужно докупить для текущих работ.</p>
       </div>
-      <ul class="material-list">
-        <li>
-          <span class="material-name">Лён натуральный, 150 см</span>
-          <span class="material-meta">2,4 м · молочный</span>
-        </li>
-        <li>
-          <span class="material-name">Муслин хлопковый</span>
-          <span class="material-meta">1,8 м · пыльно-розовый</span>
-        </li>
-        <li>
-          <span class="material-name">Нитки Gutermann</span>
-          <span class="material-meta">3 катушки · № 50</span>
-        </li>
-        <li>
-          <span class="material-name">Кружево хлопковое</span>
-          <span class="material-meta">4 м · кремовое</span>
-        </li>
-        <li>
-          <span class="material-name">Пуговицы деревянные</span>
-          <span class="material-meta">12 шт · Ø 18 мм</span>
-        </li>
-        <li>
-          <span class="material-name">Флизелин лёгкий</span>
-          <span class="material-meta">1 м · белый</span>
-        </li>
-      </ul>
+      <ul class="material-list" id="materials-list"></ul>
+      <form class="add-form" id="materials-form" data-list="materials">
+        <input type="text" name="name" placeholder="Название материала" required />
+        <input type="text" name="meta" placeholder="Количество · цвет" />
+        <button type="submit" class="btn btn-add">Добавить</button>
+      </form>
     </section>
 
     <section class="section section-alt" id="cost">
       <div class="section-intro">
         <h2>Расчёт стоимости</h2>
-        <p>Быстрый подсчёт материалов и работы для заказа.</p>
+        <p>Быстрый подсчёт материалов и работы для заказа. Значения тоже сохраняются.</p>
       </div>
       <form class="cost-form" id="cost-form">
         <label>
           Материалы, ₽
-          <input type="number" id="materials-cost" min="0" step="10" value="1200" />
+          <input type="number" id="materials-cost" name="materialsCost" min="0" step="10" value="1200" />
         </label>
         <label>
           Часы работы
-          <input type="number" id="hours" min="0" step="0.5" value="6" />
+          <input type="number" id="hours" name="hours" min="0" step="0.5" value="6" />
         </label>
         <label>
           Ставка в час, ₽
-          <input type="number" id="rate" min="0" step="50" value="800" />
+          <input type="number" id="rate" name="rate" min="0" step="50" value="800" />
         </label>
         <label>
           Наценка, %
-          <input type="number" id="margin" min="0" step="5" value="20" />
+          <input type="number" id="margin" name="margin" min="0" step="5" value="20" />
         </label>
         <div class="cost-result" aria-live="polite">
           <span class="cost-label">Итого для клиента</span>
@@ -104,24 +85,12 @@
         <h2>Идеи и зарисовки</h2>
         <p>Наброски будущих изделий и небольшие заметки к ним.</p>
       </div>
-      <div class="ideas-rail">
-        <article class="idea">
-          <h3>Летнее платье-кимоно</h3>
-          <p>Свободный крой, пояс из той же ткани, рукава ¾. Лён + контрастная отстрочка.</p>
-        </article>
-        <article class="idea">
-          <h3>Сумка-шоппер с карманом</h3>
-          <p>Двойное дно, внутренняя подкладка, ручки из ременной ленты.</p>
-        </article>
-        <article class="idea">
-          <h3>Детский комбинезон</h3>
-          <p>Мягкий муслин, кнопки по плечу, вышивка имени на кармашке.</p>
-        </article>
-        <article class="idea">
-          <h3>Скатерть с мережкой</h3>
-          <p>Квадрат 150×150, ручная мережка по краю, тонкий кант.</p>
-        </article>
-      </div>
+      <div class="ideas-rail" id="ideas-list"></div>
+      <form class="add-form add-form-wide" id="ideas-form" data-list="ideas">
+        <input type="text" name="title" placeholder="Название идеи" required />
+        <textarea name="note" placeholder="Краткое описание" rows="2"></textarea>
+        <button type="submit" class="btn btn-add">Добавить</button>
+      </form>
     </section>
 
     <section class="section section-alt" id="shops">
@@ -129,32 +98,13 @@
         <h2>Магазины</h2>
         <p>Проверенные места, куда хожу за тканями и фурнитурой.</p>
       </div>
-      <ul class="shop-list">
-        <li>
-          <a href="#" class="shop-link">
-            <span class="shop-name">Ткани «Льняной двор»</span>
-            <span class="shop-note">натуральные ткани · доставка</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="shop-link">
-            <span class="shop-name">Фурнитура «Иголочка»</span>
-            <span class="shop-note">пуговицы, молнии, нитки</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="shop-link">
-            <span class="shop-name">Магазин «Муслин»</span>
-            <span class="shop-note">детские и лёгкие ткани</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="shop-link">
-            <span class="shop-name">Ателье-склад «Крой»</span>
-            <span class="shop-note">остатки метражом · выгодно</span>
-          </a>
-        </li>
-      </ul>
+      <ul class="shop-list" id="shops-list"></ul>
+      <form class="add-form add-form-shops" id="shops-form" data-list="shops">
+        <input type="text" name="name" placeholder="Название магазина" required />
+        <input type="text" name="note" placeholder="Что там покупаю" />
+        <input type="url" name="url" placeholder="Ссылка (необязательно)" />
+        <button type="submit" class="btn btn-add">Добавить</button>
+      </form>
     </section>
 
     <section class="section" id="clients">
@@ -162,28 +112,20 @@
         <h2>Клиенты</h2>
         <p>Люди и заказы, которые сейчас в работе или уже сданы.</p>
       </div>
-      <ul class="client-list">
-        <li>
-          <span class="client-name">Анна К.</span>
-          <span class="client-order">Платье на выпускной</span>
-          <span class="client-status status-work">в работе</span>
-        </li>
-        <li>
-          <span class="client-name">Мария С.</span>
-          <span class="client-order">Комплект постельного</span>
-          <span class="client-status status-done">сдан</span>
-        </li>
-        <li>
-          <span class="client-name">Елена В.</span>
-          <span class="client-order">Ремонт пальто</span>
-          <span class="client-status status-wait">ожидает ткань</span>
-        </li>
-        <li>
-          <span class="client-name">Ольга П.</span>
-          <span class="client-order">Сумка и косметичка</span>
-          <span class="client-status status-work">в работе</span>
-        </li>
-      </ul>
+      <ul class="client-list" id="clients-list"></ul>
+      <form class="add-form add-form-clients" id="clients-form" data-list="clients">
+        <input type="text" name="name" placeholder="Имя клиента" required />
+        <input type="text" name="order" placeholder="Заказ" required />
+        <select name="status" aria-label="Статус">
+          <option value="work">в работе</option>
+          <option value="wait">ожидает ткань</option>
+          <option value="done">сдан</option>
+        </select>
+        <button type="submit" class="btn btn-add">Добавить</button>
+      </form>
+      <p class="reset-wrap">
+        <button type="button" class="btn btn-reset" id="reset-data">Сбросить к примерам</button>
+      </p>
     </section>
   </main>
 
